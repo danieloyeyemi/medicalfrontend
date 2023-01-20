@@ -27,7 +27,7 @@ const myStyle2 ={
 const Login = () => {
 
     const navigate = useNavigate()
-    const url='http://localhost:5006/users/login'
+    const url='https://medserver.onrender.com/users/login'
      const [status, setstatus] = useState("")
      const [message, setmessage] = useState("")
 

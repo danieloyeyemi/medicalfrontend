@@ -16,7 +16,7 @@ const myStyle ={
 
 const Signup = () => {
     const navigate = useNavigate()
-    const url='http://localhost:5006/users/signup'
+    const url='https://medserver.onrender.com/users/signup'
      const [status, setstatus] = useState("")
      const [message, setmessage] = useState("")
      const formik=useFormik({
