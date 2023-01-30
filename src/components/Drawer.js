@@ -26,7 +26,7 @@ const Mystyle = styled(NavLink)({
     borderRadius:'1rem',
 })
 
-const Drawer = ({fullName}) => {
+const Drawer = ({none, fullName}) => {
   const [open, setopen] = useState(false)
   return (
     <>
