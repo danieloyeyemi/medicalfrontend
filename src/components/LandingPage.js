@@ -36,7 +36,7 @@ const LandingPage = () => {
                                 <Box component="img" src={patients} sx={{ width: '50px', height: '50px' }} />
                                 <Box sx={{ ml: 2 }}>
                                     <b style={{ color: 'black' }} className='docPat'>FOR PATIENTS</b>
-                                    <p>Lorem ipsum dolor sit amet, consec</p>
+                                    {/* <p>Login for patient</p> */}
                                     <Button  variant="contained" sx={{ width: '100%', backgroundColor: 'white', mt: 1 }}>
                                         <b style={{ color: 'black' }}>
                                         <NavLink to='/login' >login</NavLink>
@@ -50,7 +50,7 @@ const LandingPage = () => {
                                 <Box component="img" src={doc} sx={{ width: '50px', height: '50px' }} />
                                 <Box sx={{ ml: 2 }}>
                                     <b style={{ color: 'black' }} className='docPat'>FOR DOCTORS</b>
-                                    <p>Lorem ipsum dolor sit amet, consec</p>
+                                    {/* <p>Lorem ipsum dolor sit amet, consec</p> */}
                                     <Button variant="contained" sx={{ width: '100%', backgroundColor: 'white', mt: 1 }}>
                                         <b style={{ color: 'black' }}>
                                             Login

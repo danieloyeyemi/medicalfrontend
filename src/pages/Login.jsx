@@ -44,6 +44,7 @@ const Login = () => {
                 setstatus(true)
                 if (res.data.status===true) {
                    setstatus(true)
+                   localStorage.token = res.data.token
                    navigate('/patientsdashboard')
                 }
                 else{

@@ -6,7 +6,7 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Drawer from './Drawer';
 
-const PatientsNavbar = () => {
+const PatientsNavbar = ({fullName}) => {
     return (
         <>
             <AppBar sx={{ backgroundColor: 'white' }}>
@@ -23,7 +23,7 @@ const PatientsNavbar = () => {
                         <NotificationsActiveIcon sx={{ color: 'rgb(54,58,98)', fontWeight: 500, fontSize: '2.5rem', mr: { sm: '3rem', md: '2rem' } }} />
                         <LocationOnIcon sx={{ color: 'rgb(54,58,98)', fontWeight: 500, fontSize: '2.5rem', mr: { sm: '3rem', md: '2rem' } }} />
                         <Typography variant="body1" color="initial" sx={{ fontWeight: 500, fontSize: { sm: '1rem', md: '1.4rem' }, mr: { sm: '3rem', md: '2rem' } }}>
-                            Ella Jones
+                        {fullName}
                         </Typography>
                         <Avatar />
                     </Box>

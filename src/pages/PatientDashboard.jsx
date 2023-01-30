@@ -1,5 +1,6 @@
 import { Grid, Typography, Box } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState,useRef } from 'react'
+import axios from 'axios'
 import DashTop from '../components/DashTop.js'
 import LeftBar from '../components/LeftBar'
 import PatientsNavbar from '../components/PatientsNavbar'
@@ -7,14 +8,38 @@ import patientIllustrator from '../assets/generated.jpg'
 import HealthCard from '../components/HealthCard'
 import MuiTabs from '../components/MuiTabs'
 import Prescription from '../components/Prescription'
+import { useNavigate } from 'react-router-dom'
 
-const PatientsDashboard = () => {
+
+const PatientsDashboard = ({ gets }) => {
+    const inpRef = useRef({})
+    const [fullName, setFullName] = useState()
+    const navigate = useNavigate();
+    const token = localStorage.token
+    const url = 'https://medserver.onrender.com/users/dashboard'
+    useEffect(() => {
+        axios.get(url, {
+          headers:
+          {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }).then((res) => {
+          if (res.data.status) {
+            setFullName(res.data.user.firstname + ' ' + res.data.user.lastname)
+          } else {
+            localStorage.removeItem('token')
+            navigate('/')
+          }
+        })
+      }, [])
     return (
         <>
-            <PatientsNavbar />
+            <PatientsNavbar fullName={fullName}/>
             <Grid container mt={8.2}>
                 <Grid item lg={2.2} sx={{ display: { xs: 'none', lg: 'flex' } }}>
-                    <LeftBar />
+                    <LeftBar fullName={fullName}/>
                 </Grid>
                 <Grid item xs={12} lg={9.8} sx={{ backgroundColor: 'rgb(237, 240, 250)', pr: { xs: 1, sm: 1, md: 0 }, pl: { xs: 1, md: 3 } }}>
                     <DashTop />
@@ -34,7 +59,7 @@ const PatientsDashboard = () => {
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: { xs: .5, lg: 1 } }}>
                                     <Typography variant="h2" color="initial" sx={{ color: '#0066CC', fontWeight: 500 }}>
-                                        Ella Jones!
+                                        {fullName}
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: { xs: .5, lg: 1 } }}>
