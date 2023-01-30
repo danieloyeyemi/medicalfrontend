@@ -26,7 +26,7 @@ const Mystyle = styled(NavLink)({
     borderRadius:'1rem',
 })
 
-const Drawer = ({none}) => {
+const Drawer = ({none}, {fullName}) => {
   const [open, setopen] = useState(false)
   return (
     <>
@@ -46,7 +46,7 @@ const Drawer = ({none}) => {
                         <Box component='img' src={hero} sx={{ width: '60px', height: '70px', border: 1, borderRadius: '1rem' }} />
                     </Box>
                     <Typography variant="body1" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500, fontSize: { sm: '1rem', md: '1.5rem' }, mt: { sm: '.5rem', md: '1rem' } }}>
-                        Ella Jones
+                        {fullName}
                     </Typography>
                     <Typography variant="body1" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500, fontSize: { sm: '1rem', md: '1.1rem' } }}>
                         Patient
