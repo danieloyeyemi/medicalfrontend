@@ -30,7 +30,7 @@ const PatientsNavbar = ({fullName}) => {
                     </Box>
                     
                     <Box sx={{ display: { xs: 'flex', sm: 'none' }, alignItems: 'center',justifyContent:'space-between',width:'100%'}}>
-                    <Drawer  />
+                    <Drawer fullName={fullName} />
                         <Box sx={{display:'flex',alignItems: 'center'}}>
                             <Box component='img' src={logo} sx={{ width: { xs: '40px'} }} />
                             <Typography variant="h3" color="initial" sx={{ fontSize: { xs: '2rem',color: '#0066CC' }, fontWeight: 500 }}>
